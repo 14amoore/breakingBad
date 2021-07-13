@@ -18,7 +18,6 @@ fetch(bBRequest)
       const infoDiv = document.createElement('div');
       const charName = document.createElement('h1');
       const nickname = document.createElement('h2');
-      const typeOfWork = document.createElement('div');
       const nameSplit = el.name.split(' ');
       let lastName;
       let firstName;

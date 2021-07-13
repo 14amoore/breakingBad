@@ -2,8 +2,17 @@ body {
   font-family: sans-serif;
 }
 
+#container {
+  display: flex;
+  flex-direction: column;
+}
+
+#header {
+  margin: 0 0 1em 2.5vw;
+}
+
 .character {
-  margin: 0.25em 0 0.25em 0;
+  margin: 1em auto;
   padding: 1em;
   border: 0.25em solid;
   width: 90vw;
