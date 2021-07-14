@@ -40,7 +40,13 @@ fetch(bBRequest)
       badList.appendChild(charDiv);
       charDiv.appendChild(pic);
       pic.className = 'characterPic';
-      pic.src = el.img;
+      const imgUrl = el.img.split('.');
+      if (imgUrl[0] === 'https://static') {
+        imgUrl[0] = 'https://vignette';
+        pic.src = imgUrl.join('.');
+      } else {
+        pic.src = el.img;
+      }
       pic.alt = `A picture of ${el.name} played by ${el.portrayed}, in the popular dramedy Breaking Bad.`;
       charDiv.appendChild(infoDiv);
       infoDiv.appendChild(charName);
@@ -74,7 +80,7 @@ fetch(bBRequest)
         people
           .sort(({ dataset: { lastName: a } }, { dataset: { lastName: b } }) =>
             a.localeCompare(b)
-          ) // To reverse it, use `b.localeCompare(a)`.
+          )
           .forEach((item) => item.parentNode.appendChild(item));
       }
       if (order.value === 'zToA') {
