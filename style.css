@@ -11,6 +11,10 @@ body {
   margin: 0 0 1em 2.5vw;
 }
 
+#title {
+  text-align: center;
+}
+
 .character {
   margin: 1em auto;
   padding: 1em;

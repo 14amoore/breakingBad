@@ -16,7 +16,7 @@ fetch(bBRequest)
       const charDiv = document.createElement('div');
       const pic = document.createElement('img');
       const infoDiv = document.createElement('div');
-      const charName = document.createElement('h1');
+      const charName = document.createElement('h2');
       const nickname = document.createElement('h2');
       const nameSplit = el.name.split(' ');
       let lastName;
