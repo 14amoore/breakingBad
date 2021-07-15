@@ -1,14 +1,10 @@
-const bBRequest = new Request('https://www.breakingbadapi.com/api/characters');
+import APIRequest from './characterRequest';
+
 const order = document.querySelector('#order');
 
-fetch(bBRequest)
+APIRequest()
   .then((response) => {
-    if (!response.ok) {
-      throw new Error(`There was an error: ${response.status}`);
-    }
-    return response.json();
-  })
-  .then((response) => {
+    console.log(response);
     const badList = document.querySelector('#badList');
     const placeHolder = document.querySelector('#placeHolder');
     badList.removeChild(placeHolder);
