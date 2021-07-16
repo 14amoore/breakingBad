@@ -4,4 +4,12 @@ This project was created as part of my application to Holler. There is no need t
 
 I made this using vanilla js instead of a framework because for simple project such as this one frameworks tend to be overkill.
 
-When the characters load initially they are displayed in the order they are received in. Users have the option to sort the characters from a to z, or z to a.
+When the characters load initially they are displayed in the order they are received in. Users have the option to sort the characters from A to Z, or Z to A.
+
+## Testing
+
+To run the tests simply type "npm run test" into your terminal's command line.
+
+## To Build
+
+To bundle the JS files for deployment type "npx webpack" into your terminal's command line.

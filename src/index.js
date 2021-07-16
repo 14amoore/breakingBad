@@ -4,7 +4,7 @@ const order = document.querySelector('#order');
 
 APIRequest()
   .then((response) => {
-    console.log(response);
+    // console.log(response);
     const badList = document.querySelector('#badList');
     const placeHolder = document.querySelector('#placeHolder');
     badList.removeChild(placeHolder);
@@ -17,6 +17,7 @@ APIRequest()
       const nameSplit = el.name.split(' ');
       let lastName;
       let firstName;
+      // this is done so that the characters can be sorted by last name. A few of the characters have more than two names.
       if (nameSplit.length === 3) {
         const jr = nameSplit[2];
         firstName = `${nameSplit[0]} ${jr}`;
@@ -36,6 +37,7 @@ APIRequest()
       badList.appendChild(charDiv);
       charDiv.appendChild(pic);
       pic.className = 'characterPic';
+      // the API was delivering an address for a picture that was not loading. To fix this I just changed a portion of that address to one that is working.
       const imgUrl = el.img.split('.');
       if (imgUrl[0] === 'https://static') {
         imgUrl[0] = 'https://vignette';
@@ -56,6 +58,7 @@ APIRequest()
       work.className = 'work';
       work.innerHTML = `Occupation: `;
       const { occupation } = el;
+      // if a character has more than one occupation they are all displayed.
       if (occupation.length > 1) {
         for (let i = 0; i < occupation.length; i += 1) {
           if (i < occupation.length - 1) {
@@ -70,6 +73,7 @@ APIRequest()
     });
   })
   .then(() => {
+    // these functions allow for sorting of the characters, they both use the Array.sort() method.
     const people = Array.from(document.querySelectorAll('.character'));
     order.onchange = () => {
       if (order.value === 'aToZ') {
